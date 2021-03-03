@@ -137,9 +137,7 @@ io.on('connection', (socket:any) => {
         
         
         chatMessages.setMessages(message);
-
-        if(chatMessages.getMessages().length > 0) io.sockets.emit('messages', chatMessages.getMessages());
-        else io.sockets.emit('messages', chatMessages.getMessages());
+        io.sockets.emit('messages', chatMessages.getMessages());
     })
 });
 
